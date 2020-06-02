@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
-    <title>GitHub Users Infos</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <title>GitHub Users Infos</title>
+</head>
+
+<body>
+  <form>
     <label for="input">Please Enter GitHub Username :</label>
     <input id="input" type="text" />
     <button type="button">View Infos</button>
-    <div class="name"></div>
-    <div class="visit"></div>
-    <div class="show1"></div>
-    <div class="show2"></div>
-    <div class="show3"></div>
-    <script src="main.js"></script>
-  </body>
+  </form>
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    Please Write A GitHup Username
+  </div>
+  <div class="name"></div>
+  <div class="linkContainer"></div>
+  <div class="repos"></div>
+  <div class="followings"></div>
+  <div class="followers"></div>
+  <script src="main.js"></script>
+</body>
+
 </html>
