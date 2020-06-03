@@ -34,31 +34,40 @@ function getData() {
     fetch(`https://api.github.com/users/${username.value}`)
       .then((res) => res.json())
       .then((data) => {
-        fullName.appendChild(
-          document
-          .createElement("p")
-          .appendChild(document.createTextNode(data.name))
-        );
+        if (data.message == "Not Found") {
+          clearInfos();
+          linkContainer.innerHTML = "There is no account with this username";
+        } else {
+          fullName.appendChild(
+            document
+            .createElement("p")
+            .appendChild(document.createTextNode(data.name))
+          );
 
-        let profilePic = document.createElement("img");
-        profilePic.setAttribute("src", data.avatar_url);
-        profilePic.setAttribute("alt", "Profile Picture");
-        fullName.appendChild(profilePic);
-        let profileLink = document.createElement("a"),
-          profileLinkText = document.createTextNode("Visit Profile");
-        profileLink.appendChild(profileLinkText);
-        profileLink.href = `https://github.com/${username.value}`;
-        profileLink.setAttribute("target", "_blank");
-        linkContainer.appendChild(profileLink);
-
+          let profilePic = document.createElement("img");
+          profilePic.setAttribute("src", data.avatar_url);
+          profilePic.setAttribute("alt", "Profile Picture");
+          fullName.appendChild(profilePic);
+          let profileLink = document.createElement("a"),
+            profileLinkText = document.createTextNode("Visit Profile");
+          profileLink.appendChild(profileLinkText);
+          profileLink.href = `https://github.com/${username.value}`;
+          profileLink.setAttribute("target", "_blank");
+          linkContainer.appendChild(profileLink);
+        }
       });
     fetch(`https://api.github.com/users/${username.value}/repos`)
       .then((res) => res.json())
       .then((data) => {
-        let p1 = document.createElement("h4"),
-          txt1 = document.createTextNode("REPOSITORIES : ");
-        p1.appendChild(txt1);
-        repos.appendChild(p1);
+        if (data.message == "Not Found") {
+          clearInfos();
+          linkContainer.innerHTML = "There is no account with this username";
+        } else {
+          let p1 = document.createElement("h4"),
+            txt1 = document.createTextNode("REPOSITORIES : ");
+          p1.appendChild(txt1);
+          repos.appendChild(p1);
+        }
         data.map((repo) => {
           let repoContainer = document.createElement("p"),
             repoName = document.createTextNode(repo.name);
@@ -69,10 +78,15 @@ function getData() {
     fetch(`https://api.github.com/users/${username.value}/following`)
       .then((res) => res.json())
       .then((data) => {
-        let p2 = document.createElement("h4"),
-          txt2 = document.createTextNode("FOLLOWING : ");
-        p2.appendChild(txt2);
-        followings.appendChild(p2);
+        if (data.message == "Not Found") {
+          clearInfos();
+          linkContainer.innerHTML = "There is no account with this username";
+        } else {
+          let p2 = document.createElement("h4"),
+            txt2 = document.createTextNode("FOLLOWING : ");
+          p2.appendChild(txt2);
+          followings.appendChild(p2);
+        }
         data.map((following) => {
           let followingContainer = document.createElement("p"),
             followName = document.createTextNode(following.login);
@@ -83,10 +97,16 @@ function getData() {
     fetch(`https://api.github.com/users/${username.value}/followers`)
       .then((res) => res.json())
       .then((data) => {
-        let p3 = document.createElement("h4"),
-          txt3 = document.createTextNode("FOLLOWERS : ");
-        p3.appendChild(txt3);
-        followers.appendChild(p3);
+        if (data.message == "Not Found") {
+          clearInfos();
+          linkContainer.innerHTML = "There is no account with this username";
+        } else {
+          let p3 = document.createElement("h4"),
+            txt3 = document.createTextNode("FOLLOWERS : ");
+          p3.appendChild(txt3);
+          followers.appendChild(p3);
+        }
+
         data.map((follower) => {
           let followerContainer = document.createElement("p"),
             followerName = document.createTextNode(follower.login);
