@@ -2,6 +2,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 label,
@@ -26,7 +27,7 @@ input {
 }
 
 input:focus {
-  box-shadow: 2px 2px 2px 1px #3ead43, -2px -2px 2px 1px #3ead43;
+  box-shadow: 2px 2px 2px 1px #7E1F86, -2px -2px 2px 1px #7E1F86;
 }
 
 button {
@@ -36,14 +37,15 @@ button {
   width: 9em;
   height: 3em;
   color: white;
-  background-color: #3ead43;
+  background-color: #7E1F86;
   border-radius: 10px;
 }
 
 .name {
-  color: #0b9a12;
+  color: #0759a5;
   text-shadow: 1px -1px black;
-  font-size: 2.6em;
+  font-size: 2.7em;
+  font-family: 'Merienda', cursive;
 }
 
 .name img {
@@ -65,8 +67,13 @@ button {
 }
 
 .linkContainer a {
-  color: #0b9a12;
+  color: #05427a;
   font-weight: bold;
+}
+
+.linkContainer a:hover {
+  color: #7E1F86;
+  text-decoration: none;
 }
 
 .alert {
@@ -108,13 +115,12 @@ button {
 .repos h4,
 .followings h4,
 .followers h4 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   border-bottom: 1px solid;
   width: fit-content;
   margin: auto;
   margin-bottom: 24px;
-  color: #f5eb91;
-  background-color: black;
+  background-color: #91C4F2;
 }
 
 .repos p,
@@ -122,8 +128,8 @@ button {
 .followers p {
   color: black;
   margin: auto;
-  background-color: #ffeb3b5e;
+  background-color: #7e1f8633;
   line-height: 2em;
-  border-bottom: 1px solid #0b9a12;
+  border-bottom: 1px solid #7e1f86;
 }
 }
