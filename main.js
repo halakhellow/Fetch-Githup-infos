@@ -63,10 +63,10 @@ function getData() {
           clearInfos();
           linkContainer.innerHTML = "There is no account with this username";
         } else {
-          let p1 = document.createElement("h4"),
-            txt1 = document.createTextNode("REPOSITORIES : ");
-          p1.appendChild(txt1);
-          repos.appendChild(p1);
+          let titleTag = document.createElement("h4"),
+            titleText = document.createTextNode("REPOSITORIES : ");
+          titleTag.appendChild(titleText);
+          repos.appendChild(titleTag);
         }
         data.map((repo) => {
           let repoContainer = document.createElement("p"),
@@ -82,10 +82,10 @@ function getData() {
           clearInfos();
           linkContainer.innerHTML = "There is no account with this username";
         } else {
-          let p2 = document.createElement("h4"),
-            txt2 = document.createTextNode("FOLLOWING : ");
-          p2.appendChild(txt2);
-          followings.appendChild(p2);
+          let titleTag = document.createElement("h4"),
+            titleText = document.createTextNode("FOLLOWING : ");
+          titleTag.appendChild(titleText);
+          followings.appendChild(titleTag);
         }
         data.map((following) => {
           let followingContainer = document.createElement("p"),
@@ -101,10 +101,10 @@ function getData() {
           clearInfos();
           linkContainer.innerHTML = "There is no account with this username";
         } else {
-          let p3 = document.createElement("h4"),
-            txt3 = document.createTextNode("FOLLOWERS : ");
-          p3.appendChild(txt3);
-          followers.appendChild(p3);
+          let titleTag = document.createElement("h4"),
+            titleText = document.createTextNode("FOLLOWERS : ");
+          titleTag.appendChild(titleText);
+          followers.appendChild(titleTag);
         }
 
         data.map((follower) => {
