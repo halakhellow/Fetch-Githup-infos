@@ -2,7 +2,17 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Merienda', cursive;
+}
+
+body {
+  background-color: #000c25;
+}
+
+img {
+  display: block;
+  margin: auto;
+  margin-top: 1.5em;
 }
 
 label,
@@ -14,9 +24,9 @@ button {
 label,
 .name {
   text-align: center;
-  font-weight: bold;
   font-size: 2.3em;
   margin: 30px;
+  color: #53aeb1;
 }
 
 input {
@@ -27,7 +37,8 @@ input {
 }
 
 input:focus {
-  box-shadow: 2px 2px 2px 1px #7E1F86, -2px -2px 2px 1px #7E1F86;
+  box-shadow: 1px 1px 8px 1px #f2f2f2;
+  ;
 }
 
 button {
@@ -36,30 +47,30 @@ button {
   margin-bottom: 30px;
   width: 9em;
   height: 3em;
-  color: white;
-  background-color: #7E1F86;
+  color: black;
+  background-color: cadetblue;
   border-radius: 10px;
 }
 
 .name {
-  color: #0759a5;
+  color: #e2bf00;
   text-shadow: 1px -1px black;
-  font-size: 2.7em;
-  font-family: 'Merienda', cursive;
+  font-size: 2.8em;
 }
 
 .name img {
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid #f2f2f2;
   padding: 2px;
   display: block;
   margin: auto;
-  max-width: 15%;
+  max-width: 13%;
   height: auto;
   margin-top: 14px;
 }
 
 .linkContainer {
+  color: #f2f2f2;
   font-size: 1.3em;
   display: block;
   text-align: center;
@@ -67,12 +78,12 @@ button {
 }
 
 .linkContainer a {
-  color: #05427a;
+  color: #e2bf00;
   font-weight: bold;
 }
 
 .linkContainer a:hover {
-  color: #7E1F86;
+  color: cadetblue;
   text-decoration: none;
 }
 
@@ -80,8 +91,8 @@ button {
   display: none;
   padding: 10px;
   font-size: 17px;
-  background-color: #d40e00;
-  color: white;
+  background-color: #770007;
+  color: #f2f2f2;
   margin-bottom: 15px;
   text-align: center;
   width: fit-content;
@@ -90,7 +101,7 @@ button {
 
 .closebtn {
   margin-left: 30px;
-  color: white;
+  color: #f2f2f2;
   font-weight: bold;
   float: right;
   font-size: 25px;
@@ -115,21 +126,20 @@ button {
 .repos h4,
 .followings h4,
 .followers h4 {
+  color: #f2f2f2;
   font-size: 1.1em;
   border-bottom: 1px solid;
   width: fit-content;
   margin: auto;
   margin-bottom: 24px;
-  background-color: #91C4F2;
 }
 
 .repos p,
 .followings p,
 .followers p {
-  color: black;
+  color: cadetblue;
   margin: auto;
-  background-color: #7e1f8633;
   line-height: 2em;
-  border-bottom: 1px solid #7e1f86;
+  border-bottom: 1px solid #e2bf00;
 }
 }
