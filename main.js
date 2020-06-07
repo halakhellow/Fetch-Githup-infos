@@ -1,6 +1,7 @@
 "use strict";
 let username = document.querySelector("input"),
   button = document.querySelector("button"),
+  githubLogo = document.querySelector("#github-logo"),
   fullName = document.querySelector(".name"),
   linkContainer = document.querySelector(".linkContainer"),
   alertMsg = document.querySelector(".alert"),
@@ -11,11 +12,13 @@ let username = document.querySelector("input"),
 username.addEventListener("keydown", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
+    githubLogo.style.display = "none";
     getData();
   }
 });
 
 button.onclick = function () {
+  githubLogo.style.display = "none";
   getData();
 };
 
