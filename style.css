@@ -9,12 +9,6 @@ body {
   background-color: #000c25;
 }
 
-img {
-  display: block;
-  margin: auto;
-  margin-top: 1.5em;
-}
-
 label,
 input,
 button {
@@ -52,13 +46,57 @@ button {
   border-radius: 10px;
 }
 
-.name {
-  color: #e2bf00;
-  text-shadow: 1px -1px black;
-  font-size: 2.8em;
+.spinner {
+  display: none;
+  color: #f2f2f2;
+  font-size: 10px;
+  margin: auto;
+  margin-bottom: 6em;
+  position: relative;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
 }
 
-.name img {
+.spinner,
+.spinner:before,
+.spinner:after {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  animation-fill-mode: both;
+  animation: spin 2s infinite ease-in-out;
+}
+
+.spinner:before,
+.spinner:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.spinner:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+
+.spinner:after {
+  left: 3.5em;
+}
+
+@keyframes spin {
+
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+img {
   border-radius: 50%;
   border: 1px solid #f2f2f2;
   padding: 2px;
@@ -67,6 +105,12 @@ button {
   max-width: 13%;
   height: auto;
   margin-top: 14px;
+}
+
+.name {
+  color: #e2bf00;
+  text-shadow: 1px -1px black;
+  font-size: 2.8em;
 }
 
 .linkContainer {

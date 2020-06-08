@@ -1,7 +1,8 @@
 "use strict";
 let username = document.querySelector("input"),
   button = document.querySelector("button"),
-  githubLogo = document.querySelector("#github-logo"),
+  spinner = document.querySelector(".spinner"),
+  profilePic = document.querySelector("img"),
   fullName = document.querySelector(".name"),
   linkContainer = document.querySelector(".linkContainer"),
   alertMsg = document.querySelector(".alert"),
@@ -9,22 +10,26 @@ let username = document.querySelector("input"),
   followings = document.querySelector(".followings"),
   followers = document.querySelector(".followers");
 
+document.onloadeddata = function () {
+  spinner.style.display = "none";
+}
+
 username.addEventListener("keydown", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
-    githubLogo.style.display = "none";
     getData();
   }
 });
 
 button.onclick = function () {
-  githubLogo.style.display = "none";
   getData();
 };
+
 
 function clearInfos() {
   fullName.innerHTML = linkContainer.innerHTML = repos.innerHTML = followings.innerHTML = followers.innerHTML =
     "";
+  profilePic.style.display = "none";
 }
 
 function getData() {
@@ -41,16 +46,14 @@ function getData() {
           clearInfos();
           linkContainer.innerHTML = "There is no account with this username";
         } else {
+          spinner.style.display = "block";
+          profilePic.style.display = "block";
           fullName.appendChild(
             document
             .createElement("p")
             .appendChild(document.createTextNode(data.name))
           );
-
-          let profilePic = document.createElement("img");
           profilePic.setAttribute("src", data.avatar_url);
-          profilePic.setAttribute("alt", "Profile Picture");
-          fullName.appendChild(profilePic);
           let profileLink = document.createElement("a"),
             profileLinkText = document.createTextNode("Visit Profile");
           profileLink.appendChild(profileLinkText);
@@ -115,6 +118,7 @@ function getData() {
             followerName = document.createTextNode(follower.login);
           followerContainer.appendChild(followerName);
           followers.appendChild(followerContainer);
+          spinner.style.display = "none";
         });
       });
   }
