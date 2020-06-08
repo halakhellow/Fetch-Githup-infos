@@ -173,7 +173,7 @@ img {
   color: #f2f2f2;
   font-size: 1.1em;
   border-bottom: 1px solid;
-  width: fit-content;
+  width: max-content;
   margin: auto;
   margin-bottom: 24px;
 }
