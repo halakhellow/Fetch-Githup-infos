@@ -186,4 +186,30 @@ img {
   line-height: 2em;
   border-bottom: 1px solid #e2bf00;
 }
+
+@media (max-width : 600px) {
+
+  .repos,
+  .followings,
+  .followers {
+    width: 100%;
+    float: none;
+  }
+
+  label,
+  .name {
+    font-size: 1.5em;
+  }
+
+  .linkContainer,
+  .repos h4,
+  .followings h4,
+  .followers h4 {
+    font-size: 1em;
+  }
+
+  img {
+    max-width: 25%;
+  }
+
 }
